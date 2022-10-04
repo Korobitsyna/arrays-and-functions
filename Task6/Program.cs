@@ -20,3 +20,16 @@ int GetNumber(string message)
     return result;
 }
 int number = GetNumber("Введите число");
+
+
+
+/*
+reference (ссылочные) - string, class, list, arrays
+value (значимые) - datetime, int, enum, long, double
+
+стек и управляемая куча
+
+стек - значимые значения
+
+управляемая куча - ссылочные
+*/
