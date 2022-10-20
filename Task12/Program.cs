@@ -1,8 +1,7 @@
 ﻿/* Напишите программу, которая определяет присутствие заданного числа в массиве
 */
 
-Console.WriteLine("Введите число от -9 до 9: ");
-int num = int.Parse(Console.ReadLine());
+
 
 int[] IntArray(int length)
 {
@@ -44,8 +43,11 @@ void FindNumber(int[] array, int num)
     }
     Console.WriteLine($"{num} не находится в массиве");
 }
+
 int length = GetNumber($"Введите размерность массива");
 int[] array = IntArray(length);
 PrintArray(array);
+Console.WriteLine("Введите число от -9 до 9: ");
+int num = int.Parse(Console.ReadLine());
 FindNumber(array, num);
-Console.WriteLine($" Замена чисел");
+
