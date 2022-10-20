@@ -4,7 +4,7 @@
 */
 
 //Инициализация массива рандомными числами от -9 до 9 длиной length
-int[] IntArray(int length)
+int[] IntArray(int length )
 {
 int [] resultArray = new int[length];
 Random rnd = new Random(); // ссылочный тип в управляемой куче
@@ -19,7 +19,7 @@ void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-     Console.Write($"{array[i]}");
+     Console.Write($"{array[i]} ");
     }
     Console.WriteLine();
 }
@@ -54,6 +54,23 @@ int GetSummOfNegative(int [] array)
     }
     return summ;
 }
+//первое значение положительная сумма, второе значение отрицательная
+(int, int) GetSumms(int [] array)
+{
+    int positiveSum = 0;
+    int negativeSum = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] < 0)
+        negativeSum += array[i];
+        else
+        positiveSum += array[i];
+    }
+    return(positiveSum, negativeSum);
+}
+
+
 int length = GetNumber($"Введите размерность массива");
 int[] arr = IntArray(length);
 PrintArray(arr);
@@ -61,4 +78,7 @@ PrintArray(arr);
 int positiveSum = GetSummOfPositive(arr);
 int negativeSum = GetSummOfNegative(arr);
 
+(int pos, int neg) = GetSumms(arr);
+
 Console.WriteLine($"Сумма положительных: {positiveSum}, сумма отрицательных: {negativeSum}");
+Console.WriteLine($"Сумма положительных: {pos}, сумма отрицательных: {neg}");
